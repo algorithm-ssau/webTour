@@ -1,32 +1,22 @@
-var imgArray = ["images/Эрмитаж.jpg",
-                "images/Петропавловский собор.jpg",
-                "images/Исаакиевский собор.jpg"];
-window.Number = 0;
-var imageCount = imgArray.length;
-function image(num) {
-    if (num == 1) {
-        if (Number < imageCount-1) {
-            Number++;
-            document.getElementById('images').src = imgArray[Number];
-            document.getElementById('num_img').innerHTML+ imageCount;
-        }
-    }
-    else {
-        if (Number > 0) {
-            Number--;
-            document.getElementById('images').src = imgArray[Number];
-            document.getElementById('num_img').innerHTML+ imageCount;
-        }
-    }
+var images = ["Исаакиевский собор.jpg","Петропавловский собор.jpg","Эрмитаж.jpg"];
+var slideIndex = 0;
+const leftArrow = document.querySelector("left");
+const rightArrow = document.querySelector("right");
+var obj = document.getElementById("gallery_img");
+//const slides = document.querySelectorAll(".slide");
+//leftArrow.addEventListener("click",()=>showSlides(slideIndex-=1));
+//rightArrow.addEventListener("click",()=>showSlides(slideIndex+=1));
+function showSlides(n){
+    if(n>images.length-1) slideIndex = 0;
+    if(n<0) slideIndex=images.length-1;
+    //obj.src = images[slideIndex];
+    //images.forEach((index)=>images[index].style.display="none");
+    //images[slideIndex-1].style.display="flex";
+    loadSlide();
 }
-function btn_show() {
-    if (Number != 0)
-        document.getElementById('left').style.display = "block";
-    if (Number != imageCount-1)
-        document.getElementById('right').style.display = "block";
+function loadSlide(){
+    var obj = document.getElementById("gallery_img");
+    obj.src = "images\\"+images[slideIndex];
+    images.forEach((index)=>images[index].style.display="none");
+    images[slideIndex].style.display="block";
 }
-function btn_noshow() {
-    document.getElementById('left').style.display = "none";
-    document.getElementById('right').style.display = "none";
-}
-document.write('<img id="images" src="'+imgArray[0]+'" position="relative" width="100%">');
