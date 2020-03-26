@@ -2,17 +2,31 @@
 	<head>
 		<title>Template</title>
 		<link rel="stylesheet" href="template.css">
+		<script src="video.js"></script>
 	</head>
-	<body>
+	<body onload="loadSlide()">
         <div class="container" id="header">
             <div class="menu_item">Меню1</div>
             <div class="menu_item">Меню2</div>
             <div class="menu_item">Меню3</div>
         </div>
         <div class="container" id="content">
-		<!--<video width= 80% controls src = "1.mkv"></video> если файлом то так если ютуб то способ ниже-->
-		<!-- Если файлом то сам файл должен находиться в папке сайта-->	
-		<iframe width="80%"  src="https://www.youtube.com/embed/FeRO2x-FXzc" frameborder="0" allowfullscreen></iframe>
+			<div class="videogallery">
+				<video id="video_mkv" class="myVideo" alt=""  controls ></video>
+				<div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
+                    <img src="images/left_arrow.png"
+					onmouseout="this.src='images/left_arrow1.png'"
+					onmouseover="this.src='images/left_arrow.png'"
+					alt="">
+                </div>
+                <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
+                    <img src="images/right_arrow.png"
+					onmouseout="this.src='images/right_arrow1.png'"
+					onmouseover="this.src='images/right_arrow.png'"
+					alt="">
+                </div>
+		<!--<iframe width="80%"  src="https://www.youtube.com/embed/FeRO2x-FXzc" frameborder="0" allowfullscreen></iframe>-->
+			</div>
         </div>
         <div class="container" id="footer">
             <div class="menu_item">Меню1</div>

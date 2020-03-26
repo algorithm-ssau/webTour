@@ -39,3 +39,30 @@
     margin-left: auto;
     margin-right: auto;
 }
+.videogallery {
+    
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 300px;
+    min-width: 300px;
+}
+.gallery_arrows {
+    position: absolute;
+    display: block;
+}
+#left {
+    left: 0;
+    top: 45%;
+}
+
+#right {
+    right: 0;
+    top: 45%;
+}
+
+.myVideo {
+    width: 100%;
+    position: relative;
+    display: block;
+}
