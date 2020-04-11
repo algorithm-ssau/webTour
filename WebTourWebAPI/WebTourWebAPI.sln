@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour", "WebTour\WebTour.csproj", "{3B56E601-908E-4E36-8F6B-EAC15C0405FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour", "WebTour\WebTour.csproj", "{C6184CC7-34EA-42E8-9627-A19A3F3E8035}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B56E601-908E-4E36-8F6B-EAC15C0405FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B56E601-908E-4E36-8F6B-EAC15C0405FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B56E601-908E-4E36-8F6B-EAC15C0405FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B56E601-908E-4E36-8F6B-EAC15C0405FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6184CC7-34EA-42E8-9627-A19A3F3E8035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6184CC7-34EA-42E8-9627-A19A3F3E8035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6184CC7-34EA-42E8-9627-A19A3F3E8035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6184CC7-34EA-42E8-9627-A19A3F3E8035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E3FB06D2-B063-4B18-8FB6-F40092E3F5A9}
+		SolutionGuid = {7192D65B-2520-4D15-80D4-296630B2B8BE}
 	EndGlobalSection
 EndGlobal
