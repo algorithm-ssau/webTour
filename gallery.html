@@ -1,0 +1,30 @@
+<HTML>
+	<head>
+		<title>Gallery</title>
+		<link rel="stylesheet" href="gallery.css">
+		<script src="gallery.js"></script>
+	</head>     
+	<body onload="loadSlide()">
+        <div class="container" id="header">
+            <div class="menu_item">Меню1</div>
+            <div class="menu_item">Меню2</div>
+            <div class="menu_item">Меню3</div>
+        </div>
+        <div class="container" id="content">
+            <div class="gallery">
+                <img id="gallery_img" class="myImg" alt="">
+                <div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
+                    <img src="images/left_arrow.png" alt="">
+                </div>
+                <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
+                    <img src="images/right_arrow.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container" id="footer">
+            <div class="menu_item">Меню1</div>
+            <div class="menu_item">Меню2</div>
+            <div class="menu_item">Меню3</div>
+        </div>
+	</body>
+</HTML>
