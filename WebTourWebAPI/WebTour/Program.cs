@@ -12,7 +12,7 @@ namespace WebTour
 {
     public class Program
     {
-        public async static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             var builder = CreateWebHostBuilder(args).Build();
             await builder.InitAsync();
