@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using WebTour.DAL.Data;
 
 namespace WebTour
 {
@@ -23,6 +25,8 @@ namespace WebTour
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(optionsBuilder => optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Connection")));
+
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
