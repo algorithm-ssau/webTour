@@ -18,7 +18,6 @@ namespace WebTour.Initialization
             Configuration = configuration;
         }
 
-        // инициализация ролей 
         protected override async Task InitializeAsync(DataContext context)
         {
             var categoryNames = Enum
