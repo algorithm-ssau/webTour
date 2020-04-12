@@ -20,6 +20,11 @@ namespace WebTour.Initialization
 
         protected override async Task InitializeAsync(DataContext context)
         {
+            await InitCategories(context);
+        }
+
+        private async Task InitCategories(DataContext context)
+        {
             var categoryNames = Enum
                 .GetNames(typeof(Category.Types));
 
@@ -30,7 +35,7 @@ namespace WebTour.Initialization
 
             if (categoryNames.Length != existingCategories.Length)
             {
-                var newRoles = categoryNames
+                var newCategories = categoryNames
                     .Where(category => existingCategories.All(x => x != category))
                     .Select(name => new Category(name)
                     {
@@ -38,8 +43,13 @@ namespace WebTour.Initialization
                     })
                     .ToList();
 
-                await context.AddRangeAsync(newRoles);
+                await context.AddRangeAsync(newCategories);
             }
         }
+
+        // todo:
+        private async Task InitSights(DataContext context)
+        { }
+
     }
 }
