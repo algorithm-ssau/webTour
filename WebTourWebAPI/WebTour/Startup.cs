@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using WebTour.DAL.Data;
+using WebTour.Initialization;
 
 namespace WebTour
 {
@@ -27,12 +28,14 @@ namespace WebTour
         {
             services.AddDbContext<DataContext>(optionsBuilder => optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Connection")));
 
+            services.AddAsyncInitializer<DataInitializer>();
+
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("https://localhost:44360", "http://localhost:44318", "https://localhost:44318")
+                    builder.WithOrigins("https://localhost:44356", "http://localhost:44356", "http://127.0.0.1:5000/", "https://127.0.0.1:5000")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
