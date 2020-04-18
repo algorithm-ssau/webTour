@@ -1,0 +1,60 @@
+<HTML>
+
+<head>
+    <title>Template</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+    <script src="{{url_for('static', filename='gallery.js')}}"></script>
+</head>
+
+<body onload="loadSlide()">
+    <div class="container" id="header">
+        <div class="menu_item">Главная</div>
+        <div class="menu_item">Музеи
+            <ul class="submenu">
+                <li><a href="Эрмитаж.html">Эрмитаж</a></li>
+                <li><a href="Русский музей.html">Русский музей</a></li>
+            </ul>
+        </div>
+        <div class="menu_item">Соборы
+            <ul class="submenu">
+                <li><a href="Cобор парижской богоматери.html">Cобор парижской богоматери</a></li>
+                <li><a href="Собор Василия Блаженного.html">Собор Василия Блаженного</a></li>
+            </ul>
+        </div>
+        <div class="menu_item">Театры
+            <ul class="submenu">
+                <li><a href="Большой театр.html">Большой театр</a></li>
+                <li><a href="Мариинский театр.html">Мариинский театр</a></li>
+            </ul>
+        </div>
+        <div class="menu_item_right">Медиа
+            <ul class="submenu">
+                <li><a href="Фото.html">Фото</a></li>
+                <li><a href="Видео.html">Видео</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="content">
+        <div class="wrapper">
+            <div class="logo">
+                <h1>WebTour</h1>
+            </div>
+            <div class="gallery">
+                <img id="gallery_img" class="myImg" border="0" alt="" onclick="imgHrefTransition(slideIndex)">
+                <div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
+                    <img src="static/images/left_arrow.png" alt="">
+                </div>
+                <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
+                    <img src="static/images/right_arrow.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="footer">
+    </div>
+</body>
+
+</HTML>
