@@ -25,11 +25,10 @@
     padding: 10px;
     display: block;
     transition: 0.5s all;
-    /*border-bottom: 1 px solid #b5306e*/
-    ;
+    cursor: pointer;
 }
 
 .submenu a:hover {
     background: #b5306e;
-    padding: 10px 0 10px 20px
+    padding: 10px 0 10px 20px;
 }
