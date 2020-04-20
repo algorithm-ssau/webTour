@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="DTO\" />
+    <ProjectReference Include="..\WebTour.DAL\WebTour.DAL.csproj" />
   </ItemGroup>
 
 </Project>

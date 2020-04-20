@@ -3,15 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour", "WebTour\WebTour.csproj", "{C6184CC7-34EA-42E8-9627-A19A3F3E8035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTour", "WebTour\WebTour.csproj", "{C6184CC7-34EA-42E8-9627-A19A3F3E8035}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CE60B730-1F30-43F9-BDE6-AE514CAA0FF3} = {CE60B730-1F30-43F9-BDE6-AE514CAA0FF3}
 		{CDE41284-8C81-46F1-93D7-752F01F2A1C1} = {CDE41284-8C81-46F1-93D7-752F01F2A1C1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour.BLL", "WebTour.BLL\WebTour.BLL.csproj", "{CE60B730-1F30-43F9-BDE6-AE514CAA0FF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTour.BLL", "WebTour.BLL\WebTour.BLL.csproj", "{CE60B730-1F30-43F9-BDE6-AE514CAA0FF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDE41284-8C81-46F1-93D7-752F01F2A1C1} = {CDE41284-8C81-46F1-93D7-752F01F2A1C1}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTour.DAL", "WebTour.DAL\WebTour.DAL.csproj", "{CDE41284-8C81-46F1-93D7-752F01F2A1C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTour.DAL", "WebTour.DAL\WebTour.DAL.csproj", "{CDE41284-8C81-46F1-93D7-752F01F2A1C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
