@@ -1,0 +1,68 @@
+<HTML>
+
+<head>
+    <title>Эрмитаж</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js"></script>
+</head>
+
+<body onload="loadSlide()">
+    <div class="container" id="header">
+        <div class="menu_item">Главная</div>
+        <div class="menu_item">Музеи
+            <ul class="submenu">
+                <li><a href="Эрмитаж.html">Эрмитаж</a></li>
+                <li><a href="Русский музей.html">Русский музей</a></li>
+            </ul>
+        </div>
+        <div class="menu_item">Соборы
+            <ul class="submenu">
+                <li><a href="Cобор парижской богоматери.html">Cобор парижской богоматери</a></li>
+                <li><a href="Собор Василия Блаженного.html">Собор Василия Блаженного</a></li>
+            </ul>
+        </div>
+        <div class="menu_item">Театры
+            <ul class="submenu">
+                <li><a href="Большой театр.html">Большой театр</a></li>
+                <li><a href="Мариинский театр.html">Мариинский театр</a></li>
+            </ul>
+        </div>
+        <div class="menu_item_right">Медиа
+            <ul class="submenu">
+                <li><a href="Фото.html">Фото</a></li>
+                <li><a href="Видео.html">Видео</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="content">
+        <div class="wrapper">
+            <div class="logo">
+                <h1>Эрмитаж</h1>
+            </div>
+            <div class="gallery">
+                <img id="gallery_img" class="myImg" border="0" alt="" onclick="imgHrefTransition(slideIndex)">
+                <div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
+                    <img src="images/left_arrow.png" alt="">
+                </div>
+                <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
+                    <img src="images/right_arrow.png" alt="">
+                </div>
+            </div>
+            <div class="likes">
+                <div class="likeButton">Я был здесь!</div>
+                <div class="likeCounter">10</div>
+            </div>
+            <div class="description">
+                Госуда́рственный Эрмита́ж (до 1917 года — Императорский Эрмитаж) — музей изобразительного и декоративно-прикладного искусства, расположенный в городе Санкт-Петербург. Второй по величине художественный музей в мире. Главный музейный комплекс включает в себя шесть связанных между собой зданий — Зимний дворец, Запасной дом Зимнего дворца, Малый Эрмитаж, Большой (Старый) Эрмитаж, Новый Эрмитаж и Эрмитажный театр. В них открыты для посещения 365 залов. Также в распоряжении музея находятся Главный штаб, Музей Императорского фарфорового завода, реставрационно-хранительский центр «Старая Деревня» и Меншиковский дворец.
+
+                Свою историю музей начинал с коллекции произведений искусства, приобретённых в частном порядке российской императрицей Екатериной II. Первоначально это собрание размещалось в специальном дворцовом флигеле — Эрмитаже (от фр. ermitage — место уединения, келья, приют отшельника, затворничество; ныне Малый Эрмитаж) — откуда и закрепилось общее название будущего музея. В 1852 году из сильно разросшейся коллекции был сформирован и открыт для посещения публичный музей, расположившийся в специально для этого построенном здании Нового Эрмитажа.
+            </div>
+            <div class="location">Санкт-Петербург, Дворцовая площадь, д. 2.</div>
+            <div class="creationDate">1764</div>
+        </div>
+    </div>
+</body>
+
+</HTML>
