@@ -49,7 +49,6 @@
 
 /*CONTENT*/
 .wrapper {
-    
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -68,13 +67,22 @@
 
 .menu_item,
 .menu_item_right {
-    width: 100%;
+    width: calc(100%/5);
     border: 1px solid #713;
     height: 100%;
     background: #CD0074;
     text-align: center;
     font-family: "Monotype Corsiva";
-    font-size: 35pt;
+    font-size: 3.5vw;
+}
+
+.menu_item a,
+.menu_item_right a{
+	display: block;
+	text-align: center; /* Выравнивание по центру */
+    height: 100%; /* Высота на весь слой */
+    color: #000;
+	text-decoration: none;
 }
 
 .menu_item:hover,
@@ -90,10 +98,11 @@
     margin-top: auto;
     /*min-width: 100%;*/
     background: #CD0074;
-    width: 268px;
+    width: calc(100%/6.25);
     /*margin-left: 200px;*/
     list-style: none;
     font-size: 15pt;
+	z-index: 2;
 }
 
 .menu_item:hover .submenu,
@@ -112,8 +121,18 @@
 
 .submenu a:hover {
     background: #F46E8F;
-    padding: 10px 0 10px 20px
+    padding: 10px 0 10px 20px;
 }
+
+div.gallery{
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+/*div.gallery p{
+   margin: 0; 
+}*/
 
 /*FOOTER*/
 #footer {
