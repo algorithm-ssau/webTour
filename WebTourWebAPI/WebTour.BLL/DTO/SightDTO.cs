@@ -24,15 +24,23 @@ namespace WebTour.BLL.DTO
         public List<string> ImageURIs { get; set; }
 
 
-        public static SightDTO Map(Sight entity) => new SightDTO
+        public static SightDTO Map(Sight entity)
         {
-            Id = entity.Id,
-            Name = entity.Name,
-            Description = entity.Description,
-            FoundingDate = entity.FoundingDate,
-            Address = entity.Address,
-            LikeCount = entity.LikeCount,
-            MainImageURI = entity.MainImageURI
-        };
+            var dto = new SightDTO
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                FoundingDate = entity.FoundingDate,
+                Address = entity.Address,
+                LikeCount = entity.LikeCount,
+                MainImageURI = entity.MainImageURI
+            };
+            foreach(var image in entity.Images)
+            {
+                dto.ImageURIs.Add(image.Path);
+            }
+            return dto;
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace WebTour.BLL.Services
         {
             try
             {
-                var entity = await _context.Sights.FirstOrDefaultAsync(s => s.Id == id);
+                var entity = await _context.Sights.Include(s => s.Images).FirstOrDefaultAsync(s => s.Id == id);
                 if (entity == null)
                     return new OperationDetailDTO<SightDTO> 
                     { Succeeded = false, ErrorMessages = { "Достопремичательность не найдена" } };
@@ -38,13 +38,12 @@ namespace WebTour.BLL.Services
             }
         }
 
-        // todo: Include(s.images) in iqueryable
         public async Task<OperationDetailDTO<List<SightDTO>>> GetSightsFromDBAsync(FilterDefinitionDTO filter = null)
         {
             var resList = new List<SightDTO>();
             try
             {
-                var sights = from s in _context.Sights.Include(s => s.Category) select s;
+                var sights = from s in _context.Sights.Include(s => s.Category).Include(s => s.Images) select s;
 
                 if(filter != null)
                 {
