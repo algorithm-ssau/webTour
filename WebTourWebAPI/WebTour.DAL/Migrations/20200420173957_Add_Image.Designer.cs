@@ -10,7 +10,7 @@ using WebTour.DAL.Data;
 namespace WebTour.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200420163129_Add_Image")]
+    [Migration("20200420173957_Add_Image")]
     partial class Add_Image
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace WebTour.DAL.Migrations
 
                     b.HasIndex("SightId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("WebTour.DAL.Entities.Sight", b =>

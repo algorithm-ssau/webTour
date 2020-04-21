@@ -51,7 +51,7 @@ namespace WebTour.DAL.Migrations
 
                     b.HasIndex("SightId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("WebTour.DAL.Entities.Sight", b =>

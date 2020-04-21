@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using WebTour.DAL.Data;
 using WebTour.Initialization;
+using WebTour.BLL.Interfaces;
+using WebTour.BLL.Services;
 
 namespace WebTour
 {
@@ -26,7 +28,9 @@ namespace WebTour
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(optionsBuilder => optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            services.AddDbContext<DataContext>(optionsBuilder =>
+            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Connection")))
+                .AddTransient<ISightService, SightService>();
 
             services.AddAsyncInitializer<DataInitializer>();
 

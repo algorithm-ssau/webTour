@@ -13,7 +13,7 @@ namespace WebTour.BLL.Services
     public class SightService : ISightService
     {
         private readonly DataContext _context;
-        private const string _serverErrorMessage = "Произошло ошибка на сервере. Подробнее: ";
+        private const string _serverErrorMessage = "Произошла ошибка на сервере. Подробнее: ";
         private const string _apiBaseImageURLstring = "https://localhost:44356/images/";
 
         public SightService(DataContext context)
@@ -25,7 +25,7 @@ namespace WebTour.BLL.Services
         {
             try
             {
-                var entity = await _context.Sights.Include(s => s.Images).FirstOrDefaultAsync(s => s.Id == id);
+                var entity = await _context.Sights.Include(s => s.Images).Include(s => s.Category).FirstOrDefaultAsync(s => s.Id == id);
                 if (entity == null)
                     return new OperationDetailDTO<SightDTO> 
                     { Succeeded = false, ErrorMessages = { "Достопремичательность не найдена" } };
@@ -53,10 +53,11 @@ namespace WebTour.BLL.Services
                     }
                 }
 
-                foreach(var entity in await sights.ToListAsync())
+                var sightEntities = await sights.AsNoTracking().ToListAsync();
+
+                foreach(var entity in sightEntities)
                 {
-                    var dto = SightDTO.Map(entity);
-                    resList.Add(dto);
+                    resList.Add(SightDTO.Map(entity));
                 }
 
                 return new OperationDetailDTO<List<SightDTO>> { Succeeded = true, Data = resList };
@@ -73,16 +74,24 @@ namespace WebTour.BLL.Services
             var resList = new List<SightDTO>();
             try 
             {
-                var sights = from s in _context.Sights select s;
+                var sights = from s in _context.Sights.Include(s => s.Category).Include(s => s.Images) select s;
                 sights = sights.OrderByDescending(s => s.LikeCount);
                 var entities = await sights.ToArrayAsync();
-                for (int i = 0; i == 2; i++)
+
+                if(entities.Length > 3)
                 {
-                    resList.Add(SightDTO.Map(entities[i]));
+                    for (int i = 0; i == 2; i++)
+                        resList.Add(SightDTO.Map(entities[i]));
                 }
-                return new OperationDetailDTO<List<SightDTO>> { Succeeded = true, Data = resList };
+                else
+                {
+                    foreach(var entity in entities)
+                        resList.Add(SightDTO.Map(entity));
+                }
                     
+                return new OperationDetailDTO<List<SightDTO>> { Succeeded = true, Data = resList };
             }
+
             catch (Exception e)
             {
                 return new OperationDetailDTO<List<SightDTO>> { Succeeded = false, ErrorMessages = { _serverErrorMessage + e.Message } };

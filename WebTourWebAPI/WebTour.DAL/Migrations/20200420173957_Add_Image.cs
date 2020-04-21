@@ -16,7 +16,7 @@ namespace WebTour.DAL.Migrations
                 oldNullable: true);
 
             migrationBuilder.CreateTable(
-                name: "Image",
+                name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -26,9 +26,9 @@ namespace WebTour.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Image", x => x.Id);
+                    table.PrimaryKey("PK_Images", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Image_Sights_SightId",
+                        name: "FK_Images_Sights_SightId",
                         column: x => x.SightId,
                         principalTable: "Sights",
                         principalColumn: "Id",
@@ -36,15 +36,15 @@ namespace WebTour.DAL.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Image_SightId",
-                table: "Image",
+                name: "IX_Images_SightId",
+                table: "Images",
                 column: "SightId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Image");
+                name: "Images");
 
             migrationBuilder.AlterColumn<string>(
                 name: "MainImageURI",
