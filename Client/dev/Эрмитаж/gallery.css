@@ -25,6 +25,10 @@
     cursor: pointer;
 }
 
+.video1 {
+	display: none;
+}
+
 #left {
     left: 0;
     top: 40%;
