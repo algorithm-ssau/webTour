@@ -41,7 +41,8 @@
 /*CONTENT*/
 #content {
     background: #FF9640;
-    height: 86%;
+    min-height: 92%;
+    height: auto;
     display: flex;
     justify-content: center;
 }
@@ -96,6 +97,7 @@
 }
 
 /*FOOTER*/
+/*
 #footer {
     background: #FF9640;
     height: 6%;
@@ -115,3 +117,4 @@
     margin-right: auto;
     border-radius: 15px 15px 0px 0px;
 }
+*/

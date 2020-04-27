@@ -43,7 +43,8 @@
 /*CONTENT*/
 #content {
     background: #FF9640;
-    height: 92%;
+    min-height: 92%;
+    height: auto;
 }
 
 .wrapper {
