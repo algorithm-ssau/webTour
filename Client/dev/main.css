@@ -15,6 +15,7 @@
 
 .logo {
     width: 100%;
+    font-size: 20pt;
     /*
     display: flex;
     justify-content: center;
@@ -58,7 +59,8 @@
 
 #content {
     background: #FF9640;
-    height: 86%;
+    min-height: 92%;
+    height: auto;
     /*
     display: flex;
     flex-flow: row wrap;
@@ -136,11 +138,38 @@ div.gallery {
     z-index: 1;
 }
 
+.greetings {
+    width: 100%;
+    text-align: center;
+    font-size: 15pt;
+}
+
+#top3 {
+    margin-top: 10%;
+}
+
+.top3_header {
+    width: 100%;
+    text-align: center;
+    font-size: 25pt;
+}
+
+.top3_img img {
+    margin: 10px;
+    height: 100px;
+    width: 200px;
+}
+
+.top3_name {
+    text-align: center;
+    font-size: 20px;
+}
 /*div.gallery p{
    margin: 0; 
 }*/
 
 /*FOOTER*/
+/*
 #footer {
     background: #FF9640;
     height: 6%;
@@ -149,7 +178,6 @@ div.gallery {
     align-items: center;
 }
 
-/*
 #footer .menu_item {
     margin-left: auto;
     margin-right: 0;
