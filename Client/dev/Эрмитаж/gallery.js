@@ -10,13 +10,16 @@ function showSlides(n){
     loadSlide();
 }
 function loadSlide() {
+    iframe = document.querySelector("#ervideo");
+
+    iframe.style.display = "none";
+    iframe.style.display = "block";
+    iframe.style.display = "none";
     if (slideIndex == images.length - 1) {
         loadSlidev();
     }
     else {
-        iframe = document.querySelector("#ervideo");
-
-        iframe.style.display = "none"
+        
 
         var obj = document.getElementById("gallery_img");
         obj.src = "images\\" + images[slideIndex];
