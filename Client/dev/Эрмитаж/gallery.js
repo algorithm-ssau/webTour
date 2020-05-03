@@ -19,7 +19,9 @@ function loadSlide() {
         loadSlidev();
     }
     else {
-        
+        var tmp = iframe.src;
+	iframe.src = "";
+	iframe.src = tmp;
 
         var obj = document.getElementById("gallery_img");
         obj.src = "images\\" + images[slideIndex];
