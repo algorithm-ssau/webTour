@@ -43,8 +43,7 @@
 /*CONTENT*/
 #content {
     background: #FF9640;
-    min-height: 92%;
-    height: auto;
+    height: 92%;
 }
 
 .wrapper {
@@ -144,6 +143,14 @@
 .submenu a:hover {
     background: #F46E8F;
     padding: 10px 0 10px 20px
+}
+
+
+#ervideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
 }
 
 /*FOOTER*/
