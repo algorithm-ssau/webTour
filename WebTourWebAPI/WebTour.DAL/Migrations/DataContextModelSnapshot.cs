@@ -34,6 +34,26 @@ namespace WebTour.DAL.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("WebTour.DAL.Entities.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SightId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SightId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("WebTour.DAL.Entities.Sight", b =>
                 {
                     b.Property<int>("Id")
@@ -57,7 +77,7 @@ namespace WebTour.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("MainImageURI")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("varchar(255)");
@@ -67,6 +87,15 @@ namespace WebTour.DAL.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Sights");
+                });
+
+            modelBuilder.Entity("WebTour.DAL.Entities.Image", b =>
+                {
+                    b.HasOne("WebTour.DAL.Entities.Sight", "Sight")
+                        .WithMany("Images")
+                        .HasForeignKey("SightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebTour.DAL.Entities.Sight", b =>

@@ -23,12 +23,32 @@ namespace WebTour.DAL.Entities
 
         public int LikeCount { get; set; }
 
+        [Column(TypeName = "varchar(max)")]
         public string MainImageURI { get; set; }
+
+        public List<Image> Images { get; set; }
 
 
         public int CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+
+
+        public Sight()
+        {
+            Images = new List<Image>();
+        }
+
+        public Sight(int categoryId, string name, string description, DateTime date, string address, string  mainImageURI)
+        {
+            Name = name;
+            Description = description;
+            FoundingDate = date;
+            Address = address;
+            CategoryId = categoryId;
+            MainImageURI = mainImageURI;
+            Images = new List<Image>();
+        }
     }
 }

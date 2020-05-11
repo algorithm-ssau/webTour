@@ -12,5 +12,6 @@ namespace WebTour.DAL.Data
 
         public DbSet<Sight> Sights { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Image> Images { get; set; }
     }
 }
