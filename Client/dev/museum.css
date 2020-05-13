@@ -6,6 +6,7 @@
     font-style: inherit;
     font-size: 100%;
     */
+	
     border: 0 none;
     outline: 0;
     padding: 0;
@@ -13,17 +14,24 @@
     box-sizing: border-box;
 }
 .logo {
+	
     width: 100%;
-    /*
-    display: flex;
-    justify-content: center;
-    */
     text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
 }
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 .container {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+	
 }
 
 /*HEADER*/
@@ -50,7 +58,7 @@
 /*CONTENT*/
 #content {
     background: #FF9640;
-    height: 86%;
+    height: 92%;
 	
 	/*display: flex;*/
 	justify-content: space-between;
@@ -124,7 +132,7 @@
 }
 
 .mainblock{
-	padding-top: 15px;
+	padding-top: 97px;
 	/*background: #000;*/
 	position: absolute;
         top: 50%;
