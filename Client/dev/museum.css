@@ -25,6 +25,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+	background: #FF9640;
 }
 
 .container {
@@ -132,10 +133,10 @@
 }
 
 .mainblock{
-	padding-top: 97px;
+	padding-top: 18;
 	/*background: #000;*/
 	position: absolute;
-        top: 50%;
+        top: 56.5%;
         left: 45%;
         /*margin-right: -50%;*/
         transform: translate(-50%, -50%);
