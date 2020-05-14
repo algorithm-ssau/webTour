@@ -133,10 +133,10 @@
 }
 
 .mainblock{
-	padding-top: 18;
+	padding-top: 8;
 	/*background: #000;*/
 	position: absolute;
-        top: 56.5%;
+        top: 53.75%;
         left: 45%;
         /*margin-right: -50%;*/
         transform: translate(-50%, -50%);
