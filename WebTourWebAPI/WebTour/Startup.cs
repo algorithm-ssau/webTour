@@ -56,6 +56,12 @@ namespace WebTour
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
 
             app.UseCors(MyAllowSpecificOrigins);
 
