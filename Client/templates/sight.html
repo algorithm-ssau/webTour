@@ -1,43 +1,37 @@
 <HTML>
 
 <head>
-    <title>Template</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+    <title>{{sight['name']}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sight/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sight/gallery.css') }}">
     <script src="{{url_for('static', filename='gallery.js')}}"></script>
 </head>
 
 <body onload="loadSlide()">
     <div class="container" id="header">
-        <div class="menu_item">
-            <a href="{{ url_for('home') }}">Главная</a>
-        </div>
-        <div class="menu_item">
-            <a href="museum.html"> Музеи</a>
+        <div class="menu_item">Главная</div>
+        <div class="menu_item">Музеи
             <ul class="submenu">
                 {% for museum in museums %}
                 <li><a href="{{ url_for('sight', id=museum['id']) }}">{{ museum['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item">
-            <a href="cathedral.html">Соборы</a>
+        <div class="menu_item">Соборы
             <ul class="submenu">
                 {% for cathedral in cathedrals %}
                 <li><a href="{{ url_for('sight', id=cathedral['id']) }}">{{ cathedral['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item">
-            <a href="theatres.html">Театры</a>
+        <div class="menu_item">Театры
             <ul class="submenu">
                 {% for theatre in theatres %}
                 <li><a href="{{ url_for('sight', id=theatre['id']) }}">{{ theatre['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item_right">
-            <a href="media.html"> Медиа</a>
+        <div class="menu_item_right">Медиа
             <ul class="submenu">
                 <li><a href="Фото.html">Фото</a></li>
                 <li><a href="Видео.html">Видео</a></li>
@@ -48,33 +42,29 @@
     <div class="container" id="content">
         <div class="wrapper">
             <div class="logo">
-                <h1>WebTour</h1>
+                <h1>{{sight['name']}}</h1>
             </div>
             <div class="gallery">
                 <img id="gallery_img" class="myImg" border="0" alt="" onclick="imgHrefTransition(slideIndex)">
+                <iframe id="ervideo" class="video1" width="716" height="403"
+                    src="https://www.youtube.com/embed/YuM16V68Pps" frameborder="0"></iframe>
                 <div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
-                    <img src="static/images/left_arrow.png" alt="">
+                    <img src="images/left_arrow.png" alt="">
                 </div>
                 <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
-                    <img src="static/images/right_arrow.png" alt="">
+                    <img src="images/right_arrow.png" alt="">
                 </div>
             </div>
-        </div>
-        <div class="greetings"><b>WebTour</b> - сайт, который позволит Вам узнать всю необходимую базовую информацию о
-            мировых достопримечательностях. Здесь вы сможете найти описания, фото и видео всемирно известных мезеев,
-            соборов и театров.</div>
-        <div class="wrapper" id="top3">
-            <div class="top3_header">Наиболее популярные места</div>
-            {% for top in toplist %}
-            <div class="top3_img">
-                <img src="{{top['mainImageURI']}}" alt="">
-                <div class="top3_name">{{top['name']}}</div>
+            <div class="likes">
+                <div class="likeButton">Я был здесь!</div>
+                <div class="likeCounter">{{sight['likeCount']}}</div>
             </div>
-            {% endfor %}
+            <div class="description">
+                {{sight['description']}}
+            </div>
+            <div class="location">{{sight['address']}}</div>
+            <div class="creationDate">{{sight['foundingDate']}}</div>
         </div>
-    </div>
-
-    <div class="container" id="footer">
     </div>
 </body>
 
