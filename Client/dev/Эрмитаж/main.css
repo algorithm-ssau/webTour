@@ -104,7 +104,18 @@
     background: #CD0074;
     text-align: center;
     font-family: "Monotype Corsiva";
-    font-size: 35pt;
+    font-size: 3.5vw;
+}
+
+.menu_item a,
+.menu_item_right a {
+    display: block;
+    text-align: center;
+    /* Выравнивание по центру */
+    height: 100%;
+    /* Высота на весь слой */
+    color: #000;
+    text-decoration: none;
 }
 
 .menu_item:hover,
