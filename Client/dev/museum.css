@@ -42,6 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+	min-height: 25px;
 }
 
 #header .menu_item {
@@ -81,7 +82,8 @@
     background: #CD0074;
     text-align: center;
     font-family: "Monotype Corsiva";
-    font-size: 3.5vw;
+    font-size: 3vw;
+	min-height: 25px;
 }
 
 .menu_item a,
