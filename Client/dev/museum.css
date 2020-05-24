@@ -60,7 +60,7 @@
 /*CONTENT*/
 #content {
     background: #FF9640;
-    height: 92%;
+    min-height: 92%;
 	
 	/*display: flex;*/
 	justify-content: space-between;
@@ -212,13 +212,4 @@ object-fit: cover;
 	height: 200px;
 	border: 1px solid #000;
 	background: #CD0074;
-}
-
-
-#footer {
-    background: #FF9640;
-    height: 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
