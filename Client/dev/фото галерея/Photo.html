@@ -1,0 +1,108 @@
+<HTML>
+
+<head>
+    <title>Template</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="gallery.css">
+	<link rel="stylesheet" href="photo.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+</head>
+
+<body onload="loadSlide()">
+    <div class="container" id="header">
+        <div class="menu_item">
+            <a href="main.html">Главная</a>
+        </div>
+        <div class="menu_item">
+            <a href="museum.html"> Музеи</a>
+            <ul class="submenu">
+                <li><a href="Эрмитаж.html">Эрмитаж</a></li>
+                <li><a href="Русский музей.html">Русский музей</a></li>
+            </ul>
+        </div>
+			
+        <div class="menu_item">
+            <a href="cathedral.html">Соборы</a>
+            <ul class="submenu">
+                <li><a href="Cобор парижской богоматери.html">Cобор Парижской Богоматери</a></li>
+                <li><a href="Собор Василия Блаженного.html">Собор Василия Блаженного</a></li>
+            </ul>
+        </div>
+        <div class="menu_item">
+            <a href="theatres.html">Театры</a>
+            <ul class="submenu">
+                <li><a href="Большой театр.html">Большой театр</a></li>
+                <li><a href="Мариинский театр.html">Мариинский театр</a></li>
+            </ul>
+        </div>
+        <div class="menu_item_right">
+            <a href="media.html"> Медиа</a>
+            <ul class="submenu">
+                <li><a href="Photo.html">Фото</a></li>
+                <li><a href="VideoGallery.html">Видео</a></li>
+            </ul>
+        </div>
+		
+    </div>
+    <div class="container" id="content">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <div class="img">
+				<img class="myImg" src="images\Эрмитаж.jpg" alt=""/>
+				<img class="myImg" src="images\\Эрмитаж1.jpg" alt=""/>
+				<img class="myImg" src="images\\Русский музей.jpg" alt=""/>
+			</div>	
+			<div class="img">
+				<img class="myImg" src="images\\Русский музей1.jpg" alt=""/>
+				<img class="myImg" src="images\\Собор Парижской Богоматери.jpg" alt=""/>
+				<img class="myImg" src="images\\Собор Парижской Богоматери1.jpg" alt=""/>
+			</div>
+			<div class="img">
+				<img class="myImg" src="images\\Собор Василия Блаженного.jpg" alt=""/>
+				<img class="myImg" src="images\\Собор Василия Блаженного1.jpg" alt=""/>
+				<img class="myImg" src="images\\Большой театр.jpg" alt=""/>
+			</div>
+			<div class="img">
+				<img class="myImg" src="images\\Большой театр1.jpg" alt=""/>
+				<img class="myImg" src="images\\Мариинский театр.jpg" alt=""/>
+				<img class="myImg" src="images\\Мариинский театр1.jpg" alt=""/>
+			</div>
+			<div id="myModal" class="modal">
+
+				  <!-- The Close Button -->
+				  <span class="close" onclick="document.getElementById('myModal').style.display='none'"><img class="modal-content" id="img01"></span>
+
+				  <!-- Modal Content (The Image) -->
+				  <!-- <img class="modal-content" id="img01"> -->
+			</div>
+			
+    </div>
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+	
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = $('.myImg');
+		var modalImg = $("#img01");
+		$('.myImg').click(function(){
+			modal.style.display = "block";
+			var newSrc = this.src;
+			modalImg.attr('src', newSrc);
+		});
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		  modal.style.display = "none";
+		}
+	</script>
+	
+	
+    <div class="container" id="footer">
+    </div>
+</body>
+
+</HTML>
