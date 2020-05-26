@@ -23,18 +23,24 @@ namespace WebTour.BLL.Services
 
         public async Task<OperationDetailDTO<SightDTO>> GetSightByIDAsync(int id)
         {
+            var detail = new OperationDetailDTO<SightDTO>();
             try
             {
                 var entity = await _context.Sights.Include(s => s.Images).Include(s => s.Category).FirstOrDefaultAsync(s => s.Id == id);
                 if (entity == null)
-                    return new OperationDetailDTO<SightDTO> 
-                    { Succeeded = false, ErrorMessages = { "Достопремичательность не найдена" } };
+                {
+                    detail.ErrorMessages.Add("Достопримечательность не найдена");
+                    return detail;
+                }
                 var dto = SightDTO.Map(entity);
-                return new OperationDetailDTO<SightDTO> { Succeeded = true, Data = dto };
+                detail.Succeeded = true;
+                detail.Data = dto;
+                return detail;
             }
             catch (Exception e)
             {
-                return new OperationDetailDTO<SightDTO> { Succeeded = false, ErrorMessages = { _serverErrorMessage + e.Message } };
+                detail.ErrorMessages.Add(_serverErrorMessage + e.Message);
+                return detail;
             }
         }
 
@@ -95,6 +101,31 @@ namespace WebTour.BLL.Services
             catch (Exception e)
             {
                 return new OperationDetailDTO<List<SightDTO>> { Succeeded = false, ErrorMessages = { _serverErrorMessage + e.Message } };
+            }
+        }
+
+        public async Task<OperationDetailDTO> AddLikeToSightAsync(int id)
+        {
+            var detail = new OperationDetailDTO();
+            try
+            {
+                var entity = await _context.Sights.FindAsync(id);
+                if (entity == null)
+                {
+                    detail.ErrorMessages.Add("Достопримечательность не найдена");
+                    return detail;
+                }
+                entity.LikeCount++;
+                _context.Sights.Update(entity);
+                await _context.SaveChangesAsync();
+
+                detail.Succeeded = true;
+                return detail;
+            }
+            catch (Exception e)
+            {
+                detail.ErrorMessages.Add(_serverErrorMessage + e.Message);
+                return detail;
             }
         }
     }
