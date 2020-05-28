@@ -1,13 +1,9 @@
 <HTML>
 
 <head>
-    <title>Template</title>
+    <title>Фото</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="gallery.css">
-	<link rel="stylesheet" href="photo.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
 </head>
 
 <body onload="loadSlide()">
@@ -49,24 +45,24 @@
     <div class="container" id="content">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <div class="img">
-				<img class="myImg" src="images\Эрмитаж.jpg" alt=""/>
-				<img class="myImg" src="images\\Эрмитаж1.jpg" alt=""/>
-				<img class="myImg" src="images\\Русский музей.jpg" alt=""/>
+				<img class="myImg_photo" src="images\Эрмитаж.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Эрмитаж1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Русский музей.jpg" alt=""/>
 			</div>	
 			<div class="img">
-				<img class="myImg" src="images\\Русский музей1.jpg" alt=""/>
-				<img class="myImg" src="images\\Собор Парижской Богоматери.jpg" alt=""/>
-				<img class="myImg" src="images\\Собор Парижской Богоматери1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Русский музей1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Собор Парижской Богоматери.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Собор Парижской Богоматери1.jpg" alt=""/>
 			</div>
 			<div class="img">
-				<img class="myImg" src="images\\Собор Василия Блаженного.jpg" alt=""/>
-				<img class="myImg" src="images\\Собор Василия Блаженного1.jpg" alt=""/>
-				<img class="myImg" src="images\\Большой театр.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Собор Василия Блаженного.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Собор Василия Блаженного1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Большой театр.jpg" alt=""/>
 			</div>
 			<div class="img">
-				<img class="myImg" src="images\\Большой театр1.jpg" alt=""/>
-				<img class="myImg" src="images\\Мариинский театр.jpg" alt=""/>
-				<img class="myImg" src="images\\Мариинский театр1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Большой театр1.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Мариинский театр.jpg" alt=""/>
+				<img class="myImg_photo" src="images\\Мариинский театр1.jpg" alt=""/>
 			</div>
 			<div id="myModal" class="modal">
 
@@ -83,9 +79,9 @@
 		var modal = document.getElementById('myModal');
 	
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		var img = $('.myImg');
+		var img = $('.myImg_photo');
 		var modalImg = $("#img01");
-		$('.myImg').click(function(){
+		$('.myImg_photo').click(function(){
 			modal.style.display = "block";
 			var newSrc = this.src;
 			modalImg.attr('src', newSrc);
