@@ -1,11 +1,5 @@
 * {
     vertical-align: baseline;
-    /*
-    font-weight: inherit;
-    font-family: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    */
     border: 0 none;
     outline: 0;
     padding: 0;
@@ -15,12 +9,9 @@
 
 .logo {
     width: 100%;
-    font-size: 20pt;
-    /*
-    display: flex;
-    justify-content: center;
-    */
     text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
 }
 
 .container {
@@ -36,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+	min-height: 25px;
 }
 
 #header .menu_item {
@@ -60,14 +52,6 @@
 #content {
     background: #FF9640;
     min-height: 92%;
-    height: auto;
-    /*
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    */
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
 }
 
 .menu_item,
@@ -78,7 +62,8 @@
     background: #CD0074;
     text-align: center;
     font-family: "Monotype Corsiva";
-    font-size: 3.5vw;
+    font-size: 3vw;
+	min-height: 25px;
 }
 
 .menu_item a,
@@ -139,13 +124,15 @@ div.gallery {
 }
 
 .greetings {
+    margin-top: 20px;
     width: 100%;
     text-align: center;
     font-size: 15pt;
 }
 
+/*TOP3*/
 #top3 {
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .top3_header {
@@ -164,29 +151,90 @@ div.gallery {
     text-align: center;
     font-size: 20px;
 }
-/*div.gallery p{
-   margin: 0; 
-}*/
 
-/*FOOTER*/
-/*
-#footer {
-    background: #FF9640;
-    height: 6%;
+/*GALLERY*/
+.gallery {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 600px;
+    height: 350px;
 }
 
-#footer .menu_item {
-    margin-left: auto;
-    margin-right: 0;
-    border-radius: 15px 15px 0px 0px;
+.gallery #gallery_img {
+    max-width: 900px;
+    max-height: 350px;
 }
 
-#footer .menu_item_right {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px 15px 0px 0px;
+.gallery_arrows {
+    position: absolute;
+    display: block;
+    cursor: pointer;
 }
-*/
+
+#left {
+    left: 0;
+    top: 40%;
+}
+
+#right {
+    right: 0;
+    top: 40%;
+}
+
+.myImg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+/*LIKES*/
+.likes {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 0.5%;
+}
+
+.likeButton,
+.likeCounter {
+    background: #CD0074;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.likeButton:hover {
+    background: #F46E8F;
+    cursor: default;
+    transition: 0.5s all;
+}
+
+.description {
+    width: 100%;
+    text-align: center;
+    margin: 3% 5% 2%;
+}
+
+.location {
+    width: 45%;
+    text-align: left;
+    margin: 3% 0% 2% 5%;
+}
+
+.creationDate {
+    width: 45%;
+    text-align: right;
+    margin: 3% 5% 2% 0%;
+}
+
+#ervideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.video1 {
+	display: none;
+}
