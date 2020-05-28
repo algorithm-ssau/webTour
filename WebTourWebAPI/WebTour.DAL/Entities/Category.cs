@@ -26,9 +26,9 @@ namespace WebTour.DAL.Entities
 
         public enum Types
         {
-            Музей,
-            Храм,
-            Театр
+            Музеи,
+            Храмы,
+            Театры
         }
     }
 }

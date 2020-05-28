@@ -37,7 +37,7 @@ namespace WebTour.BLL.DTO
             var dto = new SightDTO
             {
                 Id = entity.Id,
-                //Name = entity.Name,
+                Name = entity.Name,
                 Category = entity.Category.Name,
                 Description = entity.Description,
                 FoundingDate = entity.FoundingDate.Year,

@@ -26,7 +26,10 @@ namespace WebTour.BLL.Services
             var detail = new OperationDetailDTO<SightDTO>();
             try
             {
-                var entity = await _context.Sights.Include(s => s.Images).Include(s => s.Category).FirstOrDefaultAsync(s => s.Id == id);
+                var entity = await _context.Sights
+                    .Include(s => s.Images)
+                    .Include(s => s.Category)
+                    .FirstOrDefaultAsync(s => s.Id == id);
                 if (entity == null)
                 {
                     detail.ErrorMessages.Add("Достопримечательность не найдена");
