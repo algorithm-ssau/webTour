@@ -114,12 +114,12 @@ def category(category_name):
 
     if category_name == "Музеи":
         target_category = museums
-
-    if category_name == "Театры":
+    elif category_name == "Театры":
         target_category = theatres
-
-    if category_name == "Соборы":
+    elif category_name == "Соборы":
         target_category = cathedrals
+    else:
+        return "404"
 
     i = 0
     formatted_category = []
