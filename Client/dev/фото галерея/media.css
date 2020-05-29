@@ -234,16 +234,16 @@ div.gallery {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    margin-top: -10%;
+    margin-top: -40%;
     visibility: /*visible;*/ hidden;
    
 }
 .modal-content {
     margin: auto;
     display: block;
-    width: 100%;
-    max-width: 800px;
-    max-height: 500px;
+    
+    width: 800px;
+    height: 500px;
 }
 
 @-webkit-keyframes zoom {
@@ -300,5 +300,5 @@ margin-top: 30px;
     position: relative; 
 } 
 #modal2{
-top: -400px;
+top: -50px;
 }
