@@ -37,7 +37,6 @@
 
 /*HEADER*/
 #header {
-	min-width: 650;
     background: #FF9640;
     height: 8%;
     display: flex;
@@ -62,7 +61,7 @@
 #content {
     background: #FF9640;
     min-height: 92%;
-	min-width: 650;
+	
 	/*display: flex;*/
 	justify-content: space-between;
 	align-items: center;
@@ -136,28 +135,22 @@
 }
 
 .mainblock{
-	
-	min-width: 525;
-	padding-top: 50;
+	padding-top: 8;
 	/*background: #000;*/
 	position: absolute;
         top: 357px;
-        margin-left: 10%;
-    margin-right: 10%;
+        left: 45%;
+        /*margin-right: -50%;*/
         transform: translate(-50%, -50%);
 }
 
 .blocks1{
 	width: 140%;
-	margin-left: 20%;
-    margin-right: 10%;
 	/*background: #999;*/
 }
 
 .blocks2{
 	width: 140%;
-	margin-left: 20%;
-    margin-right: 10%;
 	/*background: #777;*/
 }
 
@@ -210,14 +203,12 @@ img {
 .block2,
 .block3,
 .block4{
-
-	/*border-style: solid;*/
+	border-style: solid;
 	margin: 20px;
 	position: relative;
     display: inline-block;
 	/*text-align: center*/
 	width: 40%;
-	min-width: 300px;
 	height: 200px;
 	border: 1px solid #000;
 	background: #CD0074;
