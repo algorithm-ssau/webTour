@@ -66,6 +66,8 @@
 	/*display: flex;*/
 	justify-content: space-between;
 	align-items: center;
+
+
     /*
     display: flex;
     flex-flow: row wrap;
@@ -137,27 +139,30 @@
 
 .mainblock{
 	
-	min-width: 525;
+	/*min-width: 525;
 	padding-top: 50;
-	/*background: #000;*/
+	/*background: #000;
 	position: absolute;
         top: 357px;
-        margin-left: 10%;
-    margin-right: 10%;
-        transform: translate(-50%, -50%);
+        margin-left: 25%;
+        transform: translate(-50%, -50%);*/
+	
+	padding-top: 5%;
+	position: absolute;
+    top: 340;
+    left: 43%;
+    /*margin-right: -50%;*/
+    transform: translate(-50%, -50%);
 }
 
 .blocks1{
 	width: 140%;
-	margin-left: 20%;
-    margin-right: 10%;
 	/*background: #999;*/
 }
 
 .blocks2{
 	width: 140%;
-	margin-left: 20%;
-    margin-right: 10%;
+
 	/*background: #777;*/
 }
 
