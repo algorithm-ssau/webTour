@@ -205,9 +205,8 @@ div.gallery {
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s;
-    float: left;
-    width: 49%;
-    margin: 1px;
+    
+    width: 48.5%;
     height: 40%;margin: 5px;
 }
 
