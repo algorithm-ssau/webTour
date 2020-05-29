@@ -1,0 +1,112 @@
+<HTML>
+
+<head>
+	<title>Фото</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/ico.png') }}" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="loadSlide()">
+	<div class="container" id="header">
+		<div class="menu_item">
+			<a href="{{ url_for('home') }}">Главная</a>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Музеи') }}">Музеи</a>
+			<ul class="submenu">
+				{% for museum in museums %}
+				<li><a href="{{ url_for('sight', id=museum['id']) }}">{{ museum['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Храмы') }}">Соборы</a>
+			<ul class="submenu">
+				{% for cathedral in cathedrals %}
+				<li><a href="{{ url_for('sight', id=cathedral['id']) }}">{{ cathedral['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Театры') }}">Театры</a>
+			<ul class="submenu">
+				{% for theatre in theatres %}
+				<li><a href="{{ url_for('sight', id=theatre['id']) }}">{{ theatre['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item_right">
+			<a>Медиа</a>
+			<ul class="submenu">
+				<li><a href="{{ url_for('photos')}}">Фото</a></li>
+				<li><a href="{{ url_for('videos')}}">Видео</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container" id="content">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<div class="img">
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Эрмитаж.jpg') }}" alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Эрмитаж1.jpg') }}" alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Русский музей.jpg') }}" alt="" />
+		</div>
+		<div class="img">
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Русский музей1.jpg') }}" alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Собор Парижской Богоматери.jpg') }}"
+				alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Собор Парижской Богоматери1.jpg') }}"
+				alt="" />
+		</div>
+		<div class="img">
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Собор Василия Блаженного.jpg') }}"
+				alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Собор Василия Блаженного1.jpg') }}"
+				alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Большой театр.jpg') }}" alt="" />
+		</div>
+		<div class="img">
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Большой театр1.jpg') }}" alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Мариинский театр.jpg') }}" alt="" />
+			<img class="myImg_photo" src="{{ url_for('static', filename='images/Мариинский театр1.jpg') }}" alt="" />
+		</div>
+		<div id="myModal" class="modal">
+
+			<!-- The Close Button -->
+			<span class="close" onclick="document.getElementById('myModal').style.display='none'"><img
+					class="modal-content" id="img01"></span>
+
+			<!-- Modal Content (The Image) -->
+			<!-- <img class="modal-content" id="img01"> -->
+		</div>
+
+	</div>
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = $('.myImg_photo');
+		var modalImg = $("#img01");
+		$('.myImg_photo').click(function () {
+			modal.style.display = "block";
+			var newSrc = this.src;
+			modalImg.attr('src', newSrc);
+		});
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+
+	<div class="container" id="footer">
+	</div>
+</body>
+
+</HTML>
