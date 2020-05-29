@@ -101,14 +101,14 @@
 
 .menu_item,
 .menu_item_right {
-    width: 100%;
+    width: calc(100%/5);
     border: 1px solid #713;
     height: 100%;
     background: #CD0074;
     text-align: center;
     font-family: "Monotype Corsiva";
     font-size: 3vw;
-    min-height: 25px;
+	min-height: 25px;
 }
 
 .menu_item a,
@@ -129,13 +129,13 @@
 }
 
 .submenu {
-    display: none;
+	display: none;
     position: absolute;
     /*left: 0;*/
     margin-top: auto;
     /*min-width: 100%;*/
     background: #CD0074;
-    width: 268px;
+    width: calc(100%/6.25);
     /*margin-left: 200px;*/
     list-style: none;
     font-size: 15pt;
