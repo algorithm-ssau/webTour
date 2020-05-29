@@ -18,6 +18,7 @@
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+
 }
 
 /*HEADER*/
@@ -185,14 +186,16 @@ div.gallery {
 
 /*PHOTO/VIDEO*/
 /* Style the Image Used to Trigger the Modal */
+
 .myImg_photo {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    float: left;
-    width: 33%;
-    height: 33%;
-    margin: 1px;
+
+    width: 32.5%;
+    height: 32.5%;
+    margin: 2px;
+ 
 }
 
 .myImg_photo:hover {opacity: 0.7;}
@@ -226,12 +229,21 @@ div.gallery {
 }
 
 /* Modal Content (Image) */
+.modal-back {
+ background-image: url('http://myfunnymemes.com/wp-content/uploads/2015/04/Doge-Meme-Lion-In-All-Its-Majestic-Glory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin-top: -40%;
+    visibility: /*visible;*/ hidden;
+   
+}
 .modal-content {
     margin: auto;
     display: block;
-    width: 100%;
-    max-width: 800px;
-    max-height: 500px;
+    
+    width: 800px;
+    height: 500px;
 }
 
 @-webkit-keyframes zoom {
@@ -246,18 +258,13 @@ div.gallery {
 
 /* The Close Button */
 .close {
-    top: 33%;
-    right: 33%;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
     transition: 0.3s;
+    
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
+    
     cursor: pointer;
 }
 
@@ -265,10 +272,33 @@ div.gallery {
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
+
     }
 }
+
+.gallerys{
+   margin-left: 3%;
+   margin-right:3%;
+
+}
+
 .img:after {
     content: "";
-    display: table;
+    display: table;	
     clear: both;
+}
+#topimg1 {
+margin-top: 30px;
+}
+#topimg2 {
+margin-top: 30px;
+}
+#topimg3 {
+margin-top: 30px;
+}
+#modal1, #modal2{
+    position: relative; 
+} 
+#modal2{
+top: -50px;
 }
