@@ -40,7 +40,7 @@ namespace WebTour.Controllers
             return Ok(result);
         }
 
-        // GET: api/sight/5
+        // GET api/sight/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSightByIdAsync(int id)
         {
@@ -48,19 +48,11 @@ namespace WebTour.Controllers
             return Ok(result);
         }
 
-        // GET: api/sight/top3
+        // GET api/sight/top3
         [HttpGet("top3")]
         public async Task<IActionResult> GetTop3Async()
         {
             var result = await _sightService.GetTop3Sights();
-            return Ok(result);
-        }
-
-        // GET: api/sight/top3
-        [HttpGet("like/{id}")]
-        public async Task<IActionResult> LikeSideByIDAsync(int id)
-        {
-            var result = await _sightService.AddLikeToSightAsync(id);
             return Ok(result);
         }
     }

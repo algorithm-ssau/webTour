@@ -166,10 +166,10 @@ img {
 	float:left;
 	margin: 7px 7px 7px 7px;
 	border: 1px solid #000;
-    width: 50%;
-    height:93%;
-    object-fit: cover;
-    object-position: 0 0;
+width: 50%;
+height:93%;
+object-fit: cover;
+  object-position: 0 0;
 }
 
 .button {

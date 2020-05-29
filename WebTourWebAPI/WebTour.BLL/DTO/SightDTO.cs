@@ -15,7 +15,7 @@ namespace WebTour.BLL.DTO
 
         public string Description { get; set; }
 
-        public int FoundingDate { get; set; }
+        public DateTime FoundingDate { get; set; }
 
         public string Address { get; set; }
 
@@ -40,7 +40,7 @@ namespace WebTour.BLL.DTO
                 Name = entity.Name,
                 Category = entity.Category.Name,
                 Description = entity.Description,
-                FoundingDate = entity.FoundingDate.Year,
+                FoundingDate = entity.FoundingDate,
                 Address = entity.Address,
                 LikeCount = entity.LikeCount,
                 MainImageURI = entity.MainImageURI

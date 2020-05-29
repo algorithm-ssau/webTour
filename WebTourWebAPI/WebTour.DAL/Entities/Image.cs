@@ -10,9 +10,6 @@ namespace WebTour.DAL.Entities
 
         public string Path { get; set; }
 
-        //public string ImageURI { get; set; }
-
-
         public Sight Sight { get; set; }
 
 
@@ -21,8 +18,5 @@ namespace WebTour.DAL.Entities
             SightId = sightId;
             Path = path;
         }
-
-        public Image()
-        { }
     }
 }

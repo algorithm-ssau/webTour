@@ -11,6 +11,5 @@ namespace WebTour.BLL.Interfaces
         public Task<OperationDetailDTO<List<SightDTO>>> GetSightsFromDBAsync(FilterDefinitionDTO filter = null);
         public Task<OperationDetailDTO<SightDTO>> GetSightByIDAsync(int id);
         public Task<OperationDetailDTO<List<SightDTO>>> GetTop3Sights();
-        public Task<OperationDetailDTO> AddLikeToSightAsync(int id);
     }
 }

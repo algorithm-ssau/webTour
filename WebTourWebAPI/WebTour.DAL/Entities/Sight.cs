@@ -50,17 +50,5 @@ namespace WebTour.DAL.Entities
             MainImageURI = mainImageURI;
             Images = new List<Image>();
         }
-
-        public Sight(int id, int categoryId, string name, string description, DateTime date, string address, string mainImageURI)
-        {
-            Id = id;
-            Name = name;
-            Description = description;
-            FoundingDate = date;
-            Address = address;
-            CategoryId = categoryId;
-            MainImageURI = mainImageURI;
-            Images = new List<Image>();
-        }
     }
 }

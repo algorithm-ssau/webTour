@@ -1,9 +1,9 @@
 <HTML>
 
 <head>
-    <title>Главная</title>
+    <title>Template</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/ico.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
     <script src="{{url_for('static', filename='gallery.js')}}"></script>
 </head>
 
@@ -13,7 +13,7 @@
             <a href="{{ url_for('home') }}">Главная</a>
         </div>
         <div class="menu_item">
-            <a href="{{ url_for('category', category_name='Музеи') }}">Музеи</a>
+            <a href="museum.html"> Музеи</a>
             <ul class="submenu">
                 {% for museum in museums %}
                 <li><a href="{{ url_for('sight', id=museum['id']) }}">{{ museum['name'] }}</a></li>
@@ -21,7 +21,7 @@
             </ul>
         </div>
         <div class="menu_item">
-            <a href="{{ url_for('category', category_name='Соборы') }}">Соборы</a>
+            <a href="cathedral.html">Соборы</a>
             <ul class="submenu">
                 {% for cathedral in cathedrals %}
                 <li><a href="{{ url_for('sight', id=cathedral['id']) }}">{{ cathedral['name'] }}</a></li>
@@ -29,7 +29,7 @@
             </ul>
         </div>
         <div class="menu_item">
-            <a href="{{ url_for('category', category_name='Театры') }}">Театры</a>
+            <a href="theatres.html">Театры</a>
             <ul class="submenu">
                 {% for theatre in theatres %}
                 <li><a href="{{ url_for('sight', id=theatre['id']) }}">{{ theatre['name'] }}</a></li>
