@@ -83,21 +83,26 @@ namespace WebTour.BLL.Services
             var resList = new List<SightDTO>();
             try 
             {
-                var sights = from s in _context.Sights.Include(s => s.Category).Include(s => s.Images) select s;
+                var sights = from s in _context.Sights
+                             .Include(s => s.Category)
+                             .Include(s => s.Images) 
+                             select s;
                 sights = sights.OrderByDescending(s => s.LikeCount);
-                var entities = await sights.ToArrayAsync();
 
-                if(entities.Length > 3)
+                var entities = await sights.ToListAsync();
+
+                if (entities.Count > 3)
                 {
-                    for (int i = 0; i == 2; i++)
-                        resList.Add(SightDTO.Map(entities[i]));
+                    sights = sights.Take(3);
                 }
                 else
+                { }
+
+                foreach (var s in sights)
                 {
-                    foreach(var entity in entities)
-                        resList.Add(SightDTO.Map(entity));
+                    resList.Add(SightDTO.Map(s));
                 }
-                    
+
                 return new OperationDetailDTO<List<SightDTO>> { Succeeded = true, Data = resList };
             }
 
