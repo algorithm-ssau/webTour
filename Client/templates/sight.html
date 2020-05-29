@@ -2,36 +2,42 @@
 
 <head>
     <title>{{sight['name']}}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sight/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sight/gallery.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/ico.png') }}" type="image/png">
     <script src="{{url_for('static', filename='gallery.js')}}"></script>
 </head>
 
-<body onload="loadSlide()">
+<body onload="loadSlides({{sight['imageURIs']}})">
     <div class="container" id="header">
-        <div class="menu_item">Главная</div>
-        <div class="menu_item">Музеи
+        <div class="menu_item">
+            <a href="{{ url_for('home') }}">Главная</a>
+        </div>
+        <div class="menu_item">
+            <a href="{{ url_for('category', category_name='Музеи') }}">Музеи</a>
             <ul class="submenu">
                 {% for museum in museums %}
                 <li><a href="{{ url_for('sight', id=museum['id']) }}">{{ museum['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item">Соборы
+        <div class="menu_item">
+            <a href="{{ url_for('category', category_name='Соборы') }}">Соборы</a>
             <ul class="submenu">
                 {% for cathedral in cathedrals %}
                 <li><a href="{{ url_for('sight', id=cathedral['id']) }}">{{ cathedral['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item">Театры
+        <div class="menu_item">
+            <a href="{{ url_for('category', category_name='Театры') }}">Театры</a>
             <ul class="submenu">
                 {% for theatre in theatres %}
                 <li><a href="{{ url_for('sight', id=theatre['id']) }}">{{ theatre['name'] }}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu_item_right">Медиа
+        <div class="menu_item_right">
+            <a href="media.html"> Медиа</a>
             <ul class="submenu">
                 <li><a href="Фото.html">Фото</a></li>
                 <li><a href="Видео.html">Видео</a></li>
@@ -46,13 +52,13 @@
             </div>
             <div class="gallery">
                 <img id="gallery_img" class="myImg" border="0" alt="" onclick="imgHrefTransition(slideIndex)">
-                <iframe id="ervideo" class="video1" width="716" height="403"
-                    src="https://www.youtube.com/embed/YuM16V68Pps" frameborder="0"></iframe>
+                <!--<iframe id="ervideo" class="video1" width="716" height="403"
+                    src="https://www.youtube.com/embed/YuM16V68Pps" frameborder="0"></iframe>--> 
                 <div id="left" onclick="showSlides(slideIndex-=1)" class="gallery_arrows">
-                    <img src="images/left_arrow.png" alt="">
+                    <img src="../static/images/left_arrow.png" alt="">
                 </div>
                 <div id="right" onclick="showSlides(slideIndex+=1)" class="gallery_arrows">
-                    <img src="images/right_arrow.png" alt="">
+                    <img src="../static/images/right_arrow.png" alt="">
                 </div>
             </div>
             <div class="likes">
