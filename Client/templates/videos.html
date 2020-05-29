@@ -1,0 +1,228 @@
+<HTML>
+
+<head>
+	<title>Видео</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/ico.png') }}" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="loadSlide()">
+	<div class="container" id="header">
+		<div class="menu_item">
+			<a href="{{ url_for('home') }}">Главная</a>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Музеи') }}">Музеи</a>
+			<ul class="submenu">
+				{% for museum in museums %}
+				<li><a href="{{ url_for('sight', id=museum['id']) }}">{{ museum['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Храмы') }}">Соборы</a>
+			<ul class="submenu">
+				{% for cathedral in cathedrals %}
+				<li><a href="{{ url_for('sight', id=cathedral['id']) }}">{{ cathedral['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item">
+			<a href="{{ url_for('category', category_name='Театры') }}">Театры</a>
+			<ul class="submenu">
+				{% for theatre in theatres %}
+				<li><a href="{{ url_for('sight', id=theatre['id']) }}">{{ theatre['name'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="menu_item_right">
+			<a>Медиа</a>
+			<ul class="submenu">
+				<li><a href="{{ url_for('photos')}}">Фото</a></li>
+				<li><a href="{{ url_for('videos')}}">Видео</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container" id="content">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<div class="img">
+			<img id="1" class="myImg_video" src="{{ url_for('static', filename='images/Эрмитаж.jpg') }}" title="Эрмитаж"
+				alt="" />
+			<img id="2" class="myImg_video" src="{{ url_for('static', filename='images/Русский музей.jpg') }}"
+				title="Русский музей" alt="" />
+		</div>
+		<div class="img">
+			<img id="3" class="myImg_video"
+				src="{{ url_for('static', filename='images/Собор Парижской Богоматери.jpg') }}"
+				title="Собор Парижской Богоматери" alt="" />
+			<img id="4" class="myImg_video"
+				src="{{ url_for('static', filename='images/Собор Василия Блаженного.jpg') }}"
+				title="Собор Василия Блаженного" alt="" />
+		</div>
+		<div class="img">
+			<img id="5" class="myImg_video" src="{{ url_for('static', filename='images/Большой театр.jpg') }}"
+				title="Большой театр" alt="" />
+			<img id="6" class="myImg_video" src="{{ url_for('static', filename='images/Мариинский театр.jpg') }}"
+				title="Мариинский театр" alt="" />
+		</div>
+	</div>
+	<div id="myModal" class="modal">
+
+		<!-- The Close Button -->
+		<span class="close" onclick="document.getElementById('myModal').style.display='none'"><iframe width="716"
+				height="403" class="modal-content" id="img01"></iframe></span>
+
+		<!-- Modal Content (The Image) -->
+		<!-- <img class="modal-content" id="img01"> -->
+	</div>
+
+	</div>
+
+	<!--Эрмитаж-->
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('1');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/YuM16V68Pps';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<!--Русский Музей-->
+	<script>
+
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('2');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/myDEkzkKwow';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<!--Собор Парижской Богоматери-->
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('3');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/LVvvp_39HuE';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<!--Собор Василия Блаженного-->
+	<script>
+
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('4');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/lhiJtNAOGY0';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<!--Большой театр-->
+	<script>
+
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('5');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/VAGZ0sRsbEA';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<!--Мариинский театр-->
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('6');
+		var modalImg = document.getElementById("img01");
+
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = 'https://www.youtube.com/embed/V0zTXFgIZ7s';
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	</script>
+
+	<div class="container" id="footer">
+	</div>
+</body>
+
+</HTML>
