@@ -229,6 +229,15 @@ div.gallery {
 }
 
 /* Modal Content (Image) */
+.modal-back {
+ background-image: url('http://myfunnymemes.com/wp-content/uploads/2015/04/Doge-Meme-Lion-In-All-Its-Majestic-Glory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin-top: -10%;
+    visibility: /*visible;*/ hidden;
+   
+}
 .modal-content {
     margin: auto;
     display: block;
@@ -249,18 +258,13 @@ div.gallery {
 
 /* The Close Button */
 .close {
-    top: 33%;
-    right: 33%;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
     transition: 0.3s;
+    
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
+    
     cursor: pointer;
 }
 
@@ -268,6 +272,7 @@ div.gallery {
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
+
     }
 }
 
@@ -290,4 +295,10 @@ margin-top: 30px;
 }
 #topimg3 {
 margin-top: 30px;
+}
+#modal1, #modal2{
+    position: relative; 
+} 
+#modal2{
+top: -400px;
 }
