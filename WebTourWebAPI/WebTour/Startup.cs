@@ -39,12 +39,17 @@ namespace WebTour
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("https://localhost:44356", "http://localhost:44356", "http://127.0.0.1:5000/", "https://127.0.0.1:5000")
+                    builder.WithOrigins("https://localhost:44356", "http://localhost:44356", "http://127.0.0.1:5000/", 
+                        "https://127.0.0.1:5000", "https://webtour-site.glitch.me/")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
-
                 });
+            });
+
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AutomaticAuthentication = false;
             });
 
             services.AddControllers();
